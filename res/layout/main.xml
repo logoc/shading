@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              style="@style/layout_full"
+              android:orientation="vertical">
+    <TabHost
+            android:id="@+id/tabhost"
+            style="@style/layout_full">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0">
+
+                <LinearLayout
+                        android:id="@+id/linearlayout"
+                        style="@style/layout_full"
+                        android:orientation="vertical" >
+
+                    <fragment
+                            android:id="@+id/content_fragment_top"
+                            android:name="com.shading.fragment.TopBarFragment"
+                            style="@style/layout_vertical"
+                            android:layout_weight="1" />
+
+                    <fragment
+                            android:id="@+id/content_fragment"
+                            android:name="com.shading.fragment.Contentfragment"
+                            style="@style/layout_vertical"
+                            android:layout_weight="9" />
+                </LinearLayout>
+            </FrameLayout>
+            <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+            <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    style="@style/layout_vertical"
+                    android:layout_height="wrap_content" >
+                <RelativeLayout
+                        android:id="@+id/layout_bottom"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                    <RadioGroup
+                            android:id="@+id/radiogroup"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:background="@drawable/bottombg">
+
+                        <RadioButton
+                                android:id="@+id/radio_home"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tab_selector_topic"
+                                android:button="@null"
+                                android:checked="true"/>
+                        <RadioButton
+                                android:id="@+id/radio_hot"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tab_selector_topic"
+                                android:button="@null"
+                                />
+                        <RadioButton
+                                android:id="@+id/radio_search"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tab_selector_topic"
+                                android:button="@null" android:checked="false"/>
+                        <RadioButton
+                                android:id="@+id/radio_setting"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tab_selector_topic"
+                                android:button="@null"/>
+
+                    </RadioGroup>
+                </RelativeLayout>
+        </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</LinearLayout>
+
